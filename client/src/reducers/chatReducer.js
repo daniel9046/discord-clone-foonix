@@ -26,6 +26,7 @@ const chatSlice = createSlice({
     receiveNewMessage(state, action) {
       const message = action.payload;
       state.messages.byId[message.id] = message;
+      console.log(message)
       state.messages.allIds.push(message.id);
     },
     receiveEditedMessage(state, action) {

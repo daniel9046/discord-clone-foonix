@@ -8,6 +8,16 @@ import {
 } from "../reducers/chatReducer";
 import { updateOnlineUsers } from "../reducers/memberListReducer";
 
+var rl = null;
+var rt = false; 
+var rateLimit = 0;
+function handleRL() {
+  rl = setTimeout(() => {
+rateLimit = 0;
+rt = false
+  }, 5000);
+}
+
 const socketMiddleware = () => {
   return (storeAPI) => {
     // This part is called when the Redux store is created
@@ -44,7 +54,14 @@ const socketMiddleware = () => {
           socket.emit("set-active-channel", JSON.stringify(action.payload));
           break;
         case "chat/sendMessage":
+          if (rateLimit == 5 && rt == false) {
+            handleRL();
+            rt = true;
+            return;
+                  };
+                  if (rateLimit == 5) return;
           socket.emit("send-message", action.payload);
+          rateLimit++;
           break;
         case "chat/editMessage":
           socket.emit("edit-message", action.payload);

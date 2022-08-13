@@ -98,7 +98,7 @@ const ServerList = () => {
   return (
     <Container>
       <ListItem>
-        <ArrowTooltip title="Sample Server" placement="left">
+        <ArrowTooltip title="fooncord" placement="left">
           <ServerIcon isActive isDiscord>
             <FaDiscord />
           </ServerIcon>

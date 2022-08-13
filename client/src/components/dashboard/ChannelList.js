@@ -78,7 +78,7 @@ const ChannelList = () => {
   return (
     <Container className="disable-select">
       <Header>
-        <Heading>Sample Server</Heading>
+        <Heading>fooncord</Heading>
       </Header>
       <Content className="scrollable">
         <List gap="2px">

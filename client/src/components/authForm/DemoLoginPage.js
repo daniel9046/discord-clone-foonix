@@ -39,7 +39,7 @@ const DemoLoginPage = () => {
   }, [dispatch, navigate, session]);
 
   return (
-    <Layout heading="Discord Clone">
+    <Layout heading="Fooncord">
       <Form onSubmit={handleSubmit}>
         <Description>
           To visitors: You can open this website in multiple tabs and sign in

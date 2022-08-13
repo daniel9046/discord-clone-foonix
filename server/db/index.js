@@ -1,10 +1,10 @@
 const { Client } = require("pg");
 
 const isProduction = process.env.NODE_ENV === "production";
-const connectionString = `postgresql://${process.env.PG_USER}:${process.env.PG_PASSWORD}@${process.env.PG_HOST}:${process.env.PG_PORT}/${process.env.PG_DATABASE}`;
+const connectionString = `postgres://kszlhoxk:g6OVRpxr5pWyQLnXFLapP7dWf1c3TZft@heffalump.db.elephantsql.com/kszlhoxk`;
 
 const client = new Client({
-  connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
+  connectionString: isProduction ? connectionString : connectionString,
   ssl: isProduction ? { rejectUnauthorized: false } : false,
 });
 
