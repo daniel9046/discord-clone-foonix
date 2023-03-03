@@ -1,7 +1,7 @@
 const { Client } = require("pg");
 
 const isProduction = process.env.NODE_ENV === "production";
-const connectionString = `postgres://kszlhoxk:g6OVRpxr5pWyQLnXFLapP7dWf1c3TZft@heffalump.db.elephantsql.com/kszlhoxk`;
+const connectionString = "postgres://rpyoafhz:BwZYLaZIlGqSHiiK3Z3xIyOK4zV9KHKh@mouse.db.elephantsql.com/rpyoafhz";
 
 const client = new Client({
   connectionString: isProduction ? connectionString : connectionString,

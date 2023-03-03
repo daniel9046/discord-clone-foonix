@@ -3,7 +3,7 @@ CREATE TABLE users (
     username VARCHAR(32) NOT NULL,
     password_hash VARCHAR(72) NOT NULL,
     avatar_color VARCHAR(7) DEFAULT '#5865f2',
-    avatar_url VARCHAR(124) DEFAULT '',
+    avatar_url VARCHAR(124) DEFAULT ''
 );
 
 CREATE TABLE channels (
